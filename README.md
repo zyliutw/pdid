@@ -23,21 +23,21 @@ The integration test requires FPC deployment.
 
 ### Hyperledger deployment
 
-1) Generate `./integration_test` by `make`
-1) Install FPC as described [here](https://github.com/hyperledger-labs/fabric-private-chaincode)
+-  Generate `./integration_test` by `make`
+-  Install FPC as described [here](https://github.com/hyperledger-labs/fabric-private-chaincode)
 (version v1.0.0-rc3 [branch](https://github.com/hyperledger/fabric-private-chaincode/tree/v1.0.0-rc3).)
 ```
 export GOPATH=~/
 export FPC_PATH=$GOPATH/src/github.com/hyperledger/fabric-private-chaincode
 git clone --recursive https://github.com/hyperledger/fabric-private-chaincode.git $FPC_PATH
 cd $FPC_PATH/utils/docker
-make pull-dev 
-make run-dev (enter container)
+make pull-dev  // download image
+make run-dev // enter container
 cd $FPC_PATH
-make (Build Fabric Private Chaincode)
+make // Build Fabric Private Chaincode
 ```
- 
-3) Copy `chaincode/` and `lib/` to FPC's `samples/`. Then `cd samples/chaincode && make`.
-4) In another terminal, run `./integration_test` and follow its instructions 
+-  Delete original chaincode/ in the container  
+-  Copy `chaincode/` and `lib/` to FPC's `samples/` (i.e., in the container). Then (in the container) `cd samples/chaincode && make`.
+-  In another terminal, run `./integration_test` and follow its instructions 
 
 
