@@ -36,8 +36,7 @@ make run-dev (enter container)
 cd $FPC_PATH
 make (Build Fabric Private Chaincode)
 ```
-
-2) 
+ 
 3) Copy `chaincode/` and `lib/` to FPC's `samples/`. Then `cd samples/chaincode && make`.
 4) In another terminal, run `./integration_test` and follow its instructions 
 
