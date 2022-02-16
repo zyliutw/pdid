@@ -57,6 +57,11 @@ int invoke( uint8_t* resp, uint32_t max_resp_len, uint32_t* resp_len, shim_ctx_p
     if (method == "newPDID")
     {
         //double t = get_time_ms();
+        //double get_time_ms(void){
+        //double t;
+        //ocall_get_time_ms(&t);
+        //return t;
+        //}
         result = newPDID(msg, ctx);
         //LOG_DEBUG("newPDID() executed within: %f", get_time_ms()-t);
         LOG_DEBUG("newPDID() executed withi");
