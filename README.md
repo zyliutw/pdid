@@ -37,7 +37,7 @@ cd $FPC_PATH
 make // Build Fabric Private Chaincode
 ```
 -  Delete original chaincode/ in the container  
--  Copy `chaincode/` and `lib/` to FPC's `samples/` (i.e., in the container). Then (in the container) `cd samples/chaincode && make`.
--  In another terminal, run `./integration_test` and follow its instructions 
+-  Copy `chaincode/` and `lib/` to FPC's `samples/` (i.e., in the container). Then (in the container) `cd samples/chaincode && make clean && make`.
+-  In another terminal, run `./integration_test` and follow its instructions  (do not directly run ./test.sh in samples/chaincode after the above step. Some parameter should be defined via ./integration_test)
 
 
