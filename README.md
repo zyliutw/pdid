@@ -8,7 +8,7 @@
 PDID-related functions (prefixed with `pdid_`) 
 - `lib/tweetnacl.{c,h}` are from [TweetNaCl](https://tweetnacl.cr.yp.to/) 
 - `chaincode/` is the GPM smart contract to be deployed with [Hyperledger Fabric Private Chaincode](https://github.com/hyperledger-labs/fabric-private-chaincode) (FPC)
-- `fpc-1.0-gitdiff.patch` is fix for building FPCv1.0 and adding an SGX's ocall getting local system time (used for performance measurements only)
+
 
 
 ### Local tests
