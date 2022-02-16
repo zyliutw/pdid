@@ -56,15 +56,17 @@ int invoke( uint8_t* resp, uint32_t max_resp_len, uint32_t* resp_len, shim_ctx_p
 
     if (method == "newPDID")
     {
-        double t = get_time_ms();
+        //double t = get_time_ms();
         result = newPDID(msg, ctx);
-        LOG_DEBUG("newPDID() executed within: %f", get_time_ms()-t);
+        //LOG_DEBUG("newPDID() executed within: %f", get_time_ms()-t);
+        LOG_DEBUG("newPDID() executed withi");
     }
     else if (method == "authPDID")
     {
-        double t = get_time_ms();
+        //double t = get_time_ms();
         result = authPDID(msg, ctx);
-        LOG_DEBUG("authPDID() executed within: %f", get_time_ms()-t);
+        //LOG_DEBUG("authPDID() executed within: %f", get_time_ms()-t);
+        LOG_DEBUG("authPDID() executed within");
     }
     else
     {
