@@ -1,12 +1,3 @@
-# Password-authenticated Decentralized Identities (PDIDs)
-
-PDIDs are human-meaningful, globally unique, and decentralized identities,
-which are securely authenticated with passwords.  The technical details of PDIDs
-are presented in 
-[*P.Szalachowski, "Password-authenticated Decentralized Identities", 2020*](https://arxiv.org/pdf/2007.15881.pdf)
-
-This repository contains a proof-of-concept PDIDs implementation, intended **for demonstration purposes only**.
-
 
 ### Code
 
@@ -34,24 +25,20 @@ The integration test requires FPC deployment.
 
 1) Generate `./integration_test` by `make`
 1) Install FPC as described [here](https://github.com/hyperledger-labs/fabric-private-chaincode)
-(I used the concept release 1.0 [branch](https://github.com/hyperledger-labs/fabric-private-chaincode/tree/concept-release-1.0).)
-2) Do a clean FPC build (even if you go with the Docker option) and before building apply the patch from this directory:
-`git apply fpc-1.0-gitdiff.patch`
-3) Copy `chaincode/` and `lib/` to FPC's `examples/`. Then `cd examples/chaincode && make`.
+(version v1.0.0-rc3 [branch](https://github.com/hyperledger/fabric-private-chaincode/tree/v1.0.0-rc3).)
+```
+export GOPATH=~/
+export FPC_PATH=$GOPATH/src/github.com/hyperledger/fabric-private-chaincode
+git clone --recursive https://github.com/hyperledger/fabric-private-chaincode.git $FPC_PATH
+cd $FPC_PATH/utils/docker
+make pull-dev 
+make run-dev (enter container)
+cd $FPC_PATH
+make (Build Fabric Private Chaincode)
+```
+
+2) 
+3) Copy `chaincode/` and `lib/` to FPC's `samples/`. Then `cd samples/chaincode && make`.
 4) In another terminal, run `./integration_test` and follow its instructions 
 
 
-### Caveats and TODO
-
-- If you get *"Enclave: VIOLATION!!! Oh oh! cmac does not match!"* in FPC logs, see my comment in `lib/pdid_gpm.c:11`
-- Sanity checks and inline TODO/FIXMEs
-- Constant-time `gpm_auth()` and optimized server/client-side cryptographic operations
-- Fixing compilation warnings and C/C++ mixes
-- At least in FPCv1.0, state keys are not encrypted, revealing registered
-  usernames. An easy fix is to generate a secret upon contract creation, and
-use `PRF(secret|username)` as state keys, instead of plain usernames.
-- ...
-
-### Author
-
-[Pawel Szalachowski](https://pszal.github.io)
