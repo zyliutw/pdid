@@ -9,7 +9,7 @@ FABRIC_SCRIPTDIR="${FPC_PATH}/fabric/bin/"
 . ${FABRIC_SCRIPTDIR}/lib/common_ledger.sh
 
 # this is the path points to FPC chaincode binary
-CC_PATH=${FPC_PATH}/samples/chaincode2/_build/lib/
+CC_PATH=${FPC_PATH}/samples/chaincode/_build/lib/
 
 CC_ID=helloworld_test
 CC_VER="$(cat ${CC_PATH}/mrenclave)"
